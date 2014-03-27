@@ -20,10 +20,26 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+@-webkit-keyframes float { 
+    0% { background-position: 50% 0; }
+    100% { background-position: 50% -250px; }
+}
+
+@-moz-keyframes flow { 
+    0% { background-position: 50% 0; }
+    100% { background-position: 50% -250px; }
+}
+@keyframes flow { 
+    0% { background-position: 50% 0; }
+    100% { background-position: 50% -250px; }
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    
+/*
     background-color:#E4E4E4;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -36,6 +52,11 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
+    */
+    background: #E9E9E9 url(../img/whitePaperBg.png) 50% 0;
+   	-webkit-animation: float 10s linear infinite;
+   	-moz-animation: float 10s linear infinite;
+	animation: float 10s linear infinite;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:2em;
     height:100%;
