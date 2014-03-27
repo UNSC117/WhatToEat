@@ -37,12 +37,14 @@ body {
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:16px;
+    font-size:2em;
     height:100%;
+    width:100%;
+    position:absolute;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
-    width:100%;
+    
 }
 
 /* Portrait layout (default) */
@@ -117,10 +119,10 @@ h1 {
 
 #mian_box {
 	position: absolute;
-	top:50%;
+	top:20%;
 	margin: 0 auto;
 	text-align: center;
-	width: 80%;
+	width: 100%;
 	color: black;
 	z-index:98;
 }
@@ -129,74 +131,63 @@ p#big {
 	font-size: 3em;
 	font-family: "Times New Roman", Times, serif;
 	line-height: 120%;
+	min-height:230px
 }
 
 #edit_menu {
 	color: #666;
+	font-size: 1.2em;
 }
-#edit_menu:hover {
-	color: black;
-	cursor: pointer;
-}
-#popbox-wrapper {
-	position: absolute;
+
+#popupBackground {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
 	top: 0;
 	left: 0;
+	background: #000000;
+	border: 1px solid #cecece;
+	z-index: 99;
+	text-align: center;
+}
+#popbox-wrapper {
 	display: none;
-	width: 100%;
-	height: 100%;
+	position: fixed;
+	height:auto;
+	width: 80%;
 	background: #fff url("../images/popup_bg.png");
-	opacity: 0.95;
-	z-index:99;
-}
-#popbox {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -140px;
-	margin-left: -200px;
-	width: 50%;
-	height: 30%;
-	line-height: 0;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
-	background: #fff;
-	-webkit-box-shadow: 0 0 0 5px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 0 0 5px rgba(0,0,0,.2);
-	box-shadow: 0 0 0 5px rgba(0,0,0,.2);
-	
-}
-#popbox textarea {
-	overflow: auto;
-	margin: 0 0 4px;
+	border: 1px solid #b8e356;
+	z-index: 2;
+	text-align: center;
 	padding: 10px;
-	width: 45%;
-	height: 25%;
-	border: 0;
-	font-size: 1em;
-	resize: none;
+	border-style: solid;
+	border-width: 5px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	z-index:999;
+	opacity: 0.95;
 }
-#popbox h3 {
+#popbox-wrapper textarea {
+	overflow: auto;
+	margin: 0 auto;
+	padding: 10px;
+	border: 0;
+	font-size: 1.1em;
+	resize: none;
+	width: 98%;
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+#popbox-wrapper h3 {
 	margin: 0;
 	padding: 20px 0;
 	border-bottom: 1px solid #bbb;
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0;
-	background: #E7E7E7 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA7CAIAAAA1lncVAAAAIklEQVQI12P4//8/0////5kYGBjgNC42PnWkilHDDBLtAgC6y0sq4aOFWQAAAABJRU5ErkJggg==") repeat-x 0 100%;
-	color: #333;
-	text-align: center;
-	font-weight: 700;
-	font-size: 1.2em;
-	line-height: 1;
 }
+
 #ok {
-	margin-left: 1%;
 	width: 98%;
-	height: 42px;
-	color: #666;
-	cursor: pointer;
+	font-size: 1em;
 }
 .tip {
 	position: absolute;
@@ -210,5 +201,45 @@ p#big {
 	border-radius: 3px;
 	background: #333;
 	color: #fff;
+}
+
+.startBtn{
+	-moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b8e356), color-stop(1, #a5cc52) );
+	background:-moz-linear-gradient( center top, #b8e356 5%, #a5cc52 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52');
+	background-color:#b8e356;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0;
+	border:1px solid #83c41a;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:1.3em;
+	font-weight:bold;
+	font-style:normal;
+	height:100px;
+	line-height:50px;
+	width:500px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #86ae47;
+}
+.startBtn:active {
+	position:relative;
+	top:1px;
 }
 
