@@ -38,30 +38,11 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    
-/*
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    */
-    background: #E9E9E9 url(../img/whitePaperBg.png) 50% 0;
-   	-webkit-animation: float 10s linear infinite;
-   	-moz-animation: float 10s linear infinite;
-	animation: float 10s linear infinite;
+   
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:2em;
     height:100%;
     width:100%;
-    position:absolute;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
@@ -71,24 +52,15 @@ body {
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
+    height:100%;                   /* text area height */
+                  /* text area width */
     text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
 }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
     }
 }
 
@@ -139,8 +111,6 @@ h1 {
 }
 
 #mian_box {
-	position: absolute;
-	top:20%;
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
@@ -211,56 +181,11 @@ p#big {
 	font-size: 1em;
 }
 .tip {
-	position: absolute;
-	top: 118px;
-	left: 280px;
-	display: inline-block;
 	padding: .5em;
-	width: 170px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	background: #333;
 	color: #fff;
-}
-
-.startBtn{
-	-moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
-	box-shadow:inset 0px 1px 0px 0px #d9fbbe;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b8e356), color-stop(1, #a5cc52) );
-	background:-moz-linear-gradient( center top, #b8e356 5%, #a5cc52 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52');
-	background-color:#b8e356;
-	-webkit-border-top-left-radius:20px;
-	-moz-border-radius-topleft:20px;
-	border-top-left-radius:20px;
-	-webkit-border-top-right-radius:20px;
-	-moz-border-radius-topright:20px;
-	border-top-right-radius:20px;
-	-webkit-border-bottom-right-radius:20px;
-	-moz-border-radius-bottomright:20px;
-	border-bottom-right-radius:20px;
-	-webkit-border-bottom-left-radius:20px;
-	-moz-border-radius-bottomleft:20px;
-	border-bottom-left-radius:20px;
-	text-indent:0;
-	border:1px solid #83c41a;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:1.3em;
-	font-weight:bold;
-	font-style:normal;
-	height:100px;
-	line-height:50px;
-	width:500px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #86ae47;
-}
-.startBtn:active {
-	position:relative;
-	top:1px;
 }
 
