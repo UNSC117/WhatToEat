@@ -21,12 +21,12 @@
 		} else if(hours >= 10 && hours <= 14) {
 			menuList.push(menuList.shift());
 			list.val(menuList[0][1]);
-			h1b4.html(" is my <br />" + menuList[0][0]);
+			h1b4.html("is my <br />" + menuList[0][0]);
 		} else {
 			menuList.push(menuList.shift());
 			menuList.push(menuList.shift());
 			list.val(menuList[0][1]);
-			h1b4.html(" is my <br />" + menuList[0][0]);
+			h1b4.html("is my <br />" + menuList[0][0]);
 		}
 
 		$("#start").click(function() {
@@ -120,7 +120,7 @@
 				left : "-10px"
 			}, 50, function() {
 				what.text("What");
-				h1b4.html(" is my<br />" + menuList[1][0]);
+				h1b4.html("is my<br />" + menuList[1][0]);
 				h1a5.text("? ");
 				list.val(menuList[1][1]);
 				menuList.push(menuList.shift());

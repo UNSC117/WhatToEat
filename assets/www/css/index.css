@@ -125,9 +125,10 @@ h1 {
 }
 
 p#big {
-    font-size: 3em;
+    font-size: 2.5em;
     font-family: "Times New Roman", Times, serif;
     line-height: 120%;
+    min-height: 180px;
 }
 
 #edit_menu {
