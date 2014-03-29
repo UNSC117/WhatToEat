@@ -77,7 +77,7 @@
 						"left" : rLeft,
 						"color" : "rgba(0,0,0," + Math.random() + ")",
 						"font-size" : emSize + "em"
-					}).appendTo("body").fadeIn("slow", function() {
+					}).appendTo("#main_box").fadeIn("slow", function() {
 						$(this).fadeOut("slow", function() {
 							$(this).remove();
 						});

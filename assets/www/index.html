@@ -1,90 +1,72 @@
 <!DOCTYPE html>
 <!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 -->
 <html>
-<head>
-     <title>What should I eat now???</title>
+  <head>
+    <title>What should I...</title>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-   
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.min.css"/>
-       <link rel="stylesheet" type="text/css" href="css/index.css" />
-<style>
-            .ui-content {
-                padding: 0 !important;
-            }
-              
-            .ui-listview {
-                margin: 0 !important;
-            }
-              
-            .example-wrapper, .example-wrapper div.iscroll-scroller {
-                width: 100% !important;
-            }
-        </style>
-   
+    <meta name="viewport" content="user-scalable=no,   width=device-width,  target-densitydpi=device-mdpi, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css"/>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-
-    <script type="text/javascript" src="js/jquery.mobile-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.2.js"></script>
     <script type="text/javascript" src="js/wte.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!-- jQuery mobile start -->
-    <div data-role="page" id="pageone">
-        <div data-role="header">
-            <h1>What Should I Eat?</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-            <!-- actul content -->
-            <div id="mian_box">
-             <p id="big">
-              <b id="what">What</b>
-              <span> is my <br />breakfast</span>
-              <span>? </span>
-          </p>
-         <button class="ui-btn" id="start" >Start</button>
-          <p>
-              <span id="edit_menu" class="gray" title="click to edit menu">{ Menu }</span>
-          </p>
+    <div data-role="page" id="pageone" data-theme="a">
+      <div data-role="header">
+        <h1>What Should I...</h1>
       </div>
-      <!-- Popup Menu -->
-      <div id="popbox-wrapper" style="display: none;">
-        <h3 title="Edit menu and devide by comma">~ Menu ~</h3>
-        <textarea rows="6" id="list" placeholder="Edit menu here and divide by comma...">The Hangover Biscuit,The American, Healthy Bennie,House Made Granola, B&amp;O Omelet , Eggs Benedict , Steel Cut Oats</textarea>
-        <input type="button" value="OK" id="ok">
+      <div data-role="content" id="pageone_content">
+        <!-- actul content -->
+        <div id="main_box">
+          <p id="big">
+            <b id="what">What</b>
+            <span> is my
+              <br />
+              breakfast</span>
+            <span>? </span>
+          </p>
+          <p>
+            <span id="edit_menu" class="gray" title="click to edit menu">{ Menu }</span>
+          </p>
+          <a href="javascript:void(0);" data-role="button" id="start" data-theme="b" data-icon="search">Start</a>
+          <!-- <button type="button" id="start" >Start</button> -->
+          
+        </div>
+        <!-- Popup Menu -->
+        <div id="popbox-wrapper" style="display: none;">
+          <h3 title="Edit menu and devide by comma">~ Menu ~</h3>
+          <textarea rows="6" id="list" placeholder="Edit menu here and divide by comma...">豆浆油条, 小笼包, 煎饼, 鸡蛋灌饼, 粥, 馄饨, 麦当劳</textarea>
+          <input type="button" value="OK" id="ok">
+        </div>
+        <div id='popupBackground'></div>
+        <!-- content end -->
+      </div>
+      <div data-role="footer">
+        <h1>Help me Decide</h1>
+      </div>
     </div>
-    <div id='popupBackground'></div>
-    <!-- content end -->
-</div>
-
-<div data-role="footer">
-    <h1>Help me To Decide</h1>
-</div>
-</div> 
-<!-- jQuery mobile end -->
-
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript">
-app.initialize();
-</script>
-</body>
+    <!-- jQuery mobile end -->
+  </body>
 </html>
