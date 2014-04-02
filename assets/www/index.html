@@ -16,26 +16,62 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
+
+
+Author: Wei Wang
+Version: 0.5
+Date: 04.01.2014
 -->
 <html>
   <head>
-    <title>What should I...</title>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="user-scalable=no,   width=device-width,  target-densitydpi=device-mdpi, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css"/>
+    
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.2.js"></script>
     <script type="text/javascript" src="js/wte.js"></script>
+    <style type="text/css">
+    @-webkit-keyframes flying { 
+        0% { background-position: 50% 0; }
+        100% { background-position: 50% -300px; }
+    }
+
+    @keyframes flying { 
+        0% { background-position: 50% 0; }
+        100% { background-position: 50% -300px; }
+    }
+    body {
+        background: url(img/bg.png);
+        background-repeat:repeat;
+        background-position:center center;
+        background-attachment:scroll;
+        -webkit-animation: flying 15s linear infinite;
+        animation: flying 15s linear infinite;
+    }
+    .ui-page {
+        background: transparent;
+    }
+    .ui-content{
+        background: transparent;
+    }
+
+    .ui-header .ui-title {
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+    </style>
+
   </head>
   <body>
     <!-- jQuery mobile start -->
     <div data-role="page" id="pageone" data-theme="a">
       <div data-role="header">
-        <h1>What Should I...</h1>
+        <h1>Hard to make a choice? <br/>I understand...</h1>
       </div>
       <div data-role="content" id="pageone_content">
         <!-- actul content -->
@@ -47,25 +83,34 @@ under the License.
               breakfast</span>
             <span>? </span>
           </p>
-          <p>
-            <span id="edit_menu" class="gray" title="click to edit menu">{ Menu }</span>
+         <p>
+              <a href="#popupMenu" id="edit_menu" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-a" data-transition="pop">
+                Menu
+              </a>
           </p>
           <a href="javascript:void(0);" data-role="button" id="start" data-theme="b" data-icon="search">Start</a>
           <!-- <button type="button" id="start" >Start</button> -->
           
         </div>
-        <!-- Popup Menu -->
-        <div id="popbox-wrapper" style="display: none;">
-          <h3 title="Edit menu and devide by comma">~ Menu ~</h3>
-          <textarea rows="6" id="list" placeholder="Edit menu here and divide by comma...">豆浆油条, 小笼包, 煎饼, 鸡蛋灌饼, 粥, 馄饨, 麦当劳</textarea>
-          <input type="button" value="OK" id="ok">
+        <!-- Popup Menu Start -->
+        <div data-role="popup" id="popupMenu" data-overlay-theme="b" data-theme="b" data-dismissible="false">
+            <div data-role="header" data-theme="a">
+            <h3>~ Menu ~</h3>
+            </div>
+            <div id="menuList" style="text-align:center;">
+               <textarea rows="20" cols="30" id="list" style="resize: none; "></textarea>
+                <a href="javascript:void(0);" class="ui-btn" data-rel="back" id="ok" data-transition="flow">Ok</a>
+            </div>
         </div>
-        <div id='popupBackground'></div>
-        <!-- content end -->
+        <!-- Popup Menu End -->
+        <!-- Tips Start--> 
+         <a href="#tips" id="hideTips" data-rel="popup" style="display:none;" data-transition="pop" data-position-to="#edit_menu">
+            Hide Tips
+          </a>
+        <div data-role="popup" id="tips" data-theme="a"><p class='tip'><i></i>No favorite food? Remember you can edit the menu!</p></div>
       </div>
-      <div data-role="footer">
-        <h1>Help me Decide</h1>
-      </div>
+      <!-- content end -->
+      <!-- Add footer here if necessary -->
     </div>
     <!-- jQuery mobile end -->
   </body>
