@@ -38,20 +38,18 @@ Date: 04.01.2014
     <style type="text/css">
     @-webkit-keyframes flying { 
         0% { background-position: 50% 0; }
-        100% { background-position: 50% -300px; }
+        100% { background-position: 50% -250px; }
     }
 
     @keyframes flying { 
         0% { background-position: 50% 0; }
-        100% { background-position: 50% -300px; }
+        100% { background-position: 50% -250px; }
     }
     body {
         background: url(img/bg.png);
         background-repeat:repeat;
-        background-position:center center;
-        background-attachment:scroll;
-        -webkit-animation: flying 15s linear infinite;
-        animation: flying 15s linear infinite;
+        -webkit-animation: flying 16s linear infinite;
+        animation: flying 16s linear infinite;
     }
     .ui-page {
         background: transparent;
@@ -61,18 +59,27 @@ Date: 04.01.2014
     }
 
     .ui-header .ui-title {
-      margin-right: 10%;
-      margin-left: 10%;
+      margin-right: 5%;
+      margin-left: 5%;
     }
     </style>
 
   </head>
   <body>
     <!-- jQuery mobile start -->
+    <!-- Start page one -->
     <div data-role="page" id="pageone" data-theme="a">
-      <div data-role="header">
-        <h1>Hard to make a choice? <br/>I understand...</h1>
+      <div data-role="header" > 
+        <a href="#infoDialog" class="ui-btn ui-btn-right ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext" data-transition="flip">Info</a>
+        <h1>Hard to make a choice?</h1>
+        <div data-role="navbar" data-iconpos="left">
+          <ul>
+              <li><a href="#" class="ui-btn-active ui-state-persist" data-icon="star">I have favs</a></li>
+              <li><a href="#pagetwo" data-icon="location" data-transition="flip">What's around me?</a></li>
+          </ul>
+        </div><!-- /navbar -->
       </div>
+
       <div data-role="content" id="pageone_content">
         <!-- actul content -->
         <div id="main_box">
@@ -84,8 +91,8 @@ Date: 04.01.2014
             <span>? </span>
           </p>
          <p>
-              <a href="#popupMenu" id="edit_menu" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-bars ui-btn-icon-left ui-btn-a" data-transition="pop">
-                Menu
+              <a href="#popupMenu" id="edit_menu" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-edit ui-btn-icon-left ui-btn-a" data-transition="pop">
+                Edit Menu
               </a>
           </p>
           <a href="javascript:void(0);" data-role="button" id="start" data-theme="b" data-icon="search">Start</a>
@@ -111,7 +118,53 @@ Date: 04.01.2014
       </div>
       <!-- content end -->
       <!-- Add footer here if necessary -->
-    </div>
+    </div><!-- /page one-->
+
+    <!-- Start page two -->
+    <div data-role="page" id="pagetwo" data-theme="a">
+      <div data-role="header" >
+        <a href="#infoDialog" class="ui-btn ui-shadow ui-corner-all ui-icon-info ui-btn-icon-notext ui-btn-right" data-transition="flip">Info</a>
+        <h1>Hard to make a choice?</h1>
+          <div data-role="navbar" data-iconpos="left">
+            <ul>
+                <li><a href="#pageone" data-icon="star" data-transition="flip">I have favs</a></li>
+                <li><a href="#" class="ui-btn-active ui-state-persist" data-icon="location">What's around me?</a></li>
+            </ul>
+          </div><!-- /navbar -->
+      </div>
+    
+      <div data-role="content" id="pagetwo_content">
+      </div>
+     
+      <div data-role="footer">
+        <h1>footer</h1>
+      </div>
+    </div><!-- /page two -->
+
+    <!-- Start info page dialog -->
+    <div data-role="page" id="infoDialog" data-dialog="true" data-theme="a" data-close-btn="none">
+      <div data-role="header" >
+        <h1>Instructions</h1>
+      </div>
+    
+      <div data-role="content" id="pageone_content">
+        <p>Enter menu with your favorite food, divide by comma</p>
+        <p>Simply click start!</p>
+      </div>
+     
+      <div data-role="footer">
+        <h1>
+          <div data-role="navbar" data-iconpos="left">
+            <ul>
+              <li>
+                <a href="#" data-role="button" data-rel="back">OK, I got it.</a>
+              </li>
+            </ul>
+          </div>
+        </h1>
+      </div>
+    </div><!-- /info dialog -->
+
     <!-- jQuery mobile end -->
   </body>
 </html>
