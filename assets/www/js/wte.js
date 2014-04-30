@@ -42,10 +42,10 @@
 			if(!running) {
 				times++;
 				if(times == 3) {
+					event.preventDefault();
+    				event.stopImmediatePropagation();
 					$("#start").text("Continue");
-					clearInterval(timer);
 					$("#hideTips").click();
-					running = 0;
 				} else {
 					h1a5.text("?");
 					$("#start").text("Stop");
