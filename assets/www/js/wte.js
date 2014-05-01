@@ -42,10 +42,10 @@
 			if(!running) {
 				times++;
 				if(times == 3) {
-					event.preventDefault();
-    				event.stopImmediatePropagation();
+					$("#hideTips").trigger('click');
 					$("#start").text("Continue");
-					$("#hideTips").click();
+					clearInterval(timer);
+					running = 0;
 				} else {
 					h1a5.text("?");
 					$("#start").text("Stop");
@@ -94,23 +94,17 @@
 		}
 	});
 
-	$("body").on("change", "#list", function(){
-		if($(this).val() == "") {
-			$(this).prop("placeholder", "Edit menu with your favorite food and divide by comma...")
-		}
-	});
-
 	$("#big").click(function() {
 
 		var h1 = $("#big");
 		if(!running) {
 			h1.css("position", "relative").stop().animate({
 				left : "-20px"
-			}, 50).animate({
+			}, 80).animate({
 				left : "20px"
-			}, 50).animate({
+			}, 80).animate({
 				left : "-10px"
-			}, 50, function() {
+			}, 80, function() {
 				what.text("What");
 				h1b4.html("is my<br />" + menuList[1][0]);
 				h1a5.text("? ");
@@ -118,13 +112,13 @@
 				menuList.push(menuList.shift());
 			}).animate({
 				left : "10px"
-			}, 50).animate({
+			}, 80).animate({
 				left : "-5px"
-			}, 50).animate({
+			}, 80).animate({
 				left : "5px"
-			}, 50).animate({
+			}, 80).animate({
 				left : 0
-			}, 50, function() {
+			}, 80, function() {
 				$(this).removeAttr("style");
 			});
 		};
